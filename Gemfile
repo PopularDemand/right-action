@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 if ENV['HEROKU']
-  ruby '2.1.5'
+  #ruby '2.1.5'
 
   gem 'pg'
   gem 'thin' # Change this to another web server if you want (ie. unicorn, passenger, puma...)
@@ -99,7 +99,7 @@ group :development do
   gem 'spring-commands-rspec', '~> 1.0'
   gem 'spring-commands-cucumber', '~> 1.0'
 
-  gem 'thin', '~> 1.6'
+  gem 'thin'
   gem 'better_errors', '~> 2.1.1'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'quiet_assets', '~> 1.1'
