@@ -15,6 +15,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def default_url_options
+    if Rails.env.production?
+      {:host => "right-action.com"}
+    else  
+      {}
+    end
+  end
+
   private
 
   def configure_permitted_parameters
