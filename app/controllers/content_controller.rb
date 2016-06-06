@@ -13,6 +13,10 @@ class ContentController < ApplicationController
         controller.response.lifetime = (delta <= 0) ? 0 : delta
       end
     end
+
+    def new
+
+    end
   end
 
   before_action :setup_themer
