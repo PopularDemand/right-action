@@ -16,7 +16,7 @@
 <%= stylesheet_link_tag :publify %>
 <%= page_header_includes %>
 <% if this_blog.use_canonical_url %>
-  <link rel="canonical" href="<%= this_blog.base_url + request.fullpath %>" />
+  <link rel="canonical" href="<%= root_path %>" />
 <% end %>
 <% if @content_for_script.present? %>
   <script type="text/javascript"><%= @content_for_script %></script>
