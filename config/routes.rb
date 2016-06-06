@@ -171,7 +171,6 @@ Rails.application.routes.draw do
 
   root 'articles#index'
 
-  get 'contents#new'
 
   get '*from', to: 'articles#redirect', format: false
 end
