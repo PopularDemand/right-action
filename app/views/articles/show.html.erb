@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+
+<!-- puts this in header -->
+	<p class='breadcrumbs col-md-12'>
+		<%= link_to "Home", root_path %> > <%= link_to "Articles", articles_path %> > <%= @article.title %>
+	</p>
+
+	<!-- article heading -->
+	<div class="col-md-8 col-md-offset-2">
+		<div class="image">
+			<img src=<%= @article.image %> alt="pic">
+			<h2>
+				<span>
+					<%= @article.title %>
+				</span>
+			</h2>
+		</div>
+		<div class="post-info">
+			<% if @article.image %>
+				<p class="image-info">Image courtesy of [IMAGE INFO]</p>
+			<% end %>
+			<p class="post-date">Posted <%= @article.created_at.inspect %></p>
+		</div>
+	</div>
+
+	<!-- article body -->
+	<div class="col-md-7 col-md-offset-2">
+		<div class="content">
+			<%= @article.content.html_safe %>
+		</div>
+	</div>
+
+	<!-- article footer -->
+	<div class="row">
+		<div class="next-article col-md-8 col-md-offset-2">
+			<div class="col-md-2 col-xs-12">
+				Next up
+			</div>
+				<div class="col-md-2 col-xs-6">
+					<img src="http://vignette2.wikia.nocookie.net/fallout/images/a/a3/100x100falloutav-vb.gif/revision/latest?cb=20111223201051" alt="" id='next-article-image'>
+				</div>
+				<div class="col-md-4 col-xs-6">
+					<h2>Next Article Title</h2>
+				</div>
+			<div class="col-md-2 hidden-xs">
+				<span class='glyphicon glyphicon-arrow-right'></span>
+			</div>
+		</div>
+
+		<div class="related-articles col-md-8 col-md-offset-2">
+			<h3>More Like This</h3>
+			<% 3.times do |time| %>
+			<% time = time+1 %>
+					<div class="related-article col-md-4 col-xs-12">
+						<img class='related-article-image' src="https://colorlib.com/dazzling/wp-content/uploads/sites/6/2013/03/image-alignment-150x150.jpg" alt="">
+						<p class="related-article-info">Title <%= "#{time}" %></p>
+					</div>
+			<% end %>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
