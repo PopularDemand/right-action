@@ -9,14 +9,31 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="245.00327"
-   height="325.00311"
+   width="250"
+   height="329.20792"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="logo.svg">
   <defs
-     id="defs4" />
+     id="defs4">
+    <filter
+       id="filter3785"
+       inkscape:menu="Transparency utilities"
+       inkscape:label="Alpha repaint"
+       inkscape:menu-tooltip="Repaint anything monochrome"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood3787"
+         flood-color="rgb(255,0,105)"
+         result="result1" />
+      <feComposite
+         id="feComposite3789"
+         in2="SourceGraphic"
+         operator="in"
+         result="result2" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,9 +41,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="322.21348"
-     inkscape:cy="244.9548"
+     inkscape:zoom="0.75"
+     inkscape:cx="156.17061"
+     inkscape:cy="295.28909"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -36,9 +53,12 @@
      fit-margin-bottom="0"
      inkscape:window-width="753"
      inkscape:window-height="524"
-     inkscape:window-x="61"
-     inkscape:window-y="24"
-     inkscape:window-maximized="0">
+     inkscape:window-x="544"
+     inkscape:window-y="52"
+     inkscape:window-maximized="0"
+     inkscape:snap-bbox="true"
+     inkscape:showpageshadow="false"
+     showborder="true">
     <inkscape:grid
        type="xygrid"
        id="grid2985"
@@ -46,8 +66,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="-177.49986px"
-       originy="-428.91576px" />
+       originx="-175px"
+       originy="-426.82075px" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -65,26 +85,28 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-177.49986,-298.4433)">
+     transform="translate(-175,-296.3335)">
     <g
-       id="g2993"
-       transform="translate(-20,-71.428573)"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+       id="g5267"
+       transform="matrix(0.99009901,0,0,0.99009901,2.970297,4.5636991)"
+       inkscape:export-filename="/home/alexa/Desktop/projects/action/app/assets/images/50x66png.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <path
          inkscape:connector-curvature="0"
          id="path2987"
-         d="m 200,692.36218 0,-240 80,-80 80,0 80,80 0,240 -80,0 0,-80 -80,0 0,80 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         d="m 180,620.93361 0,-240 80,-80 80,0 80,80 0,240 -80,0 0,-80 -80,0 0,80 z"
+         style="fill:#ffea53;fill-opacity:1;stroke:#009d40;stroke-width:12.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          inkscape:connector-curvature="0"
          id="path2989"
-         d="m 280,452.36218 0,80 80,0 0,-80 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         d="m 260,380.93361 0,80 80,0 0,-80 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#009d40;stroke-width:12.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          inkscape:connector-curvature="0"
          id="path2991"
-         d="m 360,492.36218 80,80 -80,80 0,0 80,-80 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         d="m 340,420.93361 80,80 -80,80 0,0 80,-80 z"
+         style="fill:#ffea53;fill-opacity:1;stroke:#009d40;stroke-width:12.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
   </g>
 </svg>
