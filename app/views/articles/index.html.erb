@@ -1,31 +1,31 @@
+<% provide(:title, "Articles") %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Articles</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- puts this in header -->
+  <p class='breadcrumbs col-md-12'>
+    <%= link_to "Home", root_path %> > Articles
+  </p>
 
-  <tbody>
+  <!-- List of Articles -->
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Articles</h1>
+
+    <!-- Single Article teasers -->
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.image %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="article-teaser row">
+        <div class="image col-md-4">
+          <%= image_tag(Faker::Placeholdit.image("150x150", 'jpeg', 'aaaaaa', '000'), class: "thumbnail") %>
+        </div>
+        <div class="article-info col-md-8">
+          <h2><%= link_to article.title, article %></h2>
+          <%# Fix this to only show the subheading portion of article content %>
+          <p><%= article.content.truncate(95, separator: /\s/, omission: "...(continue)") %></p>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+<%# <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
