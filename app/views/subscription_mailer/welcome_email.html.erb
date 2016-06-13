@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Right Action, <%= @contact.name %></h1>
+    <p>
+      You have successfully signed up to receive a weekly newsletter highlighting the featured articles from Right Action.<br>
+    </p>
+    <p>
+      If you have any questions regarding your subscription, please 
+      <%= link_to "contact us!", root_url(host: "localhost:3000") %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

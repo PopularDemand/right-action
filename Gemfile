@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'guard'
 end
 
 group :development do
