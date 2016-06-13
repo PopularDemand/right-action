@@ -10,21 +10,7 @@
 
   <!-- List of Articles -->
   <div class="col-md-8 col-md-offset-2">
-    <h1>Articles</h1>
-
-    <!-- Single Article teasers -->
-    <% @articles.each do |article| %>
-      <div class="article-teaser row">
-        <div class="image col-md-4">
-          <%= image_tag(Faker::Placeholdit.image("150x150", 'jpeg', 'aaaaaa', '000'), class: "thumbnail") %>
-        </div>
-        <div class="article-info col-md-8">
-          <h2><%= link_to article.title, article %></h2>
-          <%# Fix this to only show the subheading portion of article content %>
-          <p><%= article.content.truncate(95, separator: /\s/, omission: "...(continue)") %></p>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'shared/articles' %>
   </div>
 </div>
 

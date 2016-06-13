@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
 
-	def home
-	end
+  def home
+    @articles = Article.all
+  end
 end
