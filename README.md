@@ -1,3 +1,6 @@
+### Placeholder Site Using Publify Gem
+
+
 # Publify
 
 **The Ruby on Rails publishing software formerly known as Typo**
