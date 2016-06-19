@@ -31,3 +31,4 @@ public/cache/*
 !/themes/bootstrap-2
 !/themes/plain
 gems/
+/articles
