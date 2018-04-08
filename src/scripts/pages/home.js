@@ -1,4 +1,5 @@
 import 'jquery';
+import '../../stylesheets/pages/home.scss';
 
 $(function () {
   var $content = $('#content');
@@ -11,7 +12,6 @@ $(function () {
       $.each(response.items, function (k, item) {
         output += '<div class="col-sm-6 col-md-4" style="height:570px">';
         output += '<div class="blog-post"><header>';
-        output += '<h4 class="date">' + $.format.date(item.pubDate, "dd<br>MMM") + "</h4>";
         var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
         var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
         var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
