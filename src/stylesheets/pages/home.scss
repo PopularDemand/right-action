@@ -5,13 +5,36 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+$teaserContentLineHeight: 1.2em;
+$teaserContentHeight: 4 * $teaserContentLineHeight;
+
 .blog-teaser-wrapper {
-  @extend .col-sm-6;
-  @extend .col-md-4;
-  height: 570px;
+  @extend .col-xs-4;
+  @extend .col-md-3;
+  height: 250px;
+
+  .teaser-image-link {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: $primaryBlack;
+  }
 
   .teaser-image {
-    width: 360px;
-    height: 240px;
+    width: auto;
+    height: 100%;
+  }
+
+  .teaser-content {
+    height: calc(#{$teaserContentHeight} - .1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: $teaserContentLineHeight;
+
+    &:after {
+      content: '...';
+    }
   }
 }
