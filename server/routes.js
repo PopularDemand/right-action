@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('home', {
     title: 'Right Action',
-    js: 'home'
+    bundleName: 'home'
   });
 });
 
