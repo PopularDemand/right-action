@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, '../src/views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public

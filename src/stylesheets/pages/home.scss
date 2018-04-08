@@ -1,14 +1,17 @@
+@import '../common';
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
+.blog-teaser-wrapper {
+  @extend .col-sm-6;
+  @extend .col-md-4;
+  height: 570px;
 
-.blog-content {
-  .post-meta {
-    color: red;
+  .teaser-image {
+    width: 360px;
+    height: 240px;
   }
 }

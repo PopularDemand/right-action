@@ -1,14 +1,15 @@
 var express = require('express');
+var { parse } = require('medium-post-parser');
 var router = express.Router();
 
-router.get('/posts', async function(req, res, next) {
-  await Promise.resolve(true);
-  res.json({
-    '1234': {
-      id: 1234,
-      content: 'hello world'
-    }
-  });
+router.get('/posts/author/:author', async function(req, res, next) {
+  const posts = await parse({ user: req.params.author });
+  res.json(posts);
+});
+
+router.get('/posts/publication/:publication', async function(req, res, next) {
+  const posts = await parse({ publication: req.params.publication });
+  res.json(posts);
 });
 
 module.exports = router;
