@@ -45,7 +45,6 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NamedModulesPlugin()
   ]
 };
