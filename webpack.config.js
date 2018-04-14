@@ -42,7 +42,7 @@ module.exports = {
           loader: "sass-loader" // compiles Sass to CSS
       }]
     }, {
-      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      test: /\.(png|woff|woff2|eot|ttf|svg|xml|ico|webmanifest)$/,
       loader: 'url-loader?limit=100000'
     }]
   },

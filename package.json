@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "echo 'RUNNING AS PRODUCTION. TO USE DEVELOPMENT RUN yarn start:dev' && yarn run start:prod",
-    "start:dev": "NODE_ENV=development nodemon ./bin/www",
+    "start:dev:server": "NODE_ENV=development nodemon ./bin/www",
+    "start:dev:client": "NODE_ENV=development npx webpack -w",
     "start:prod": "NODE_ENV=production node ./bin/www"
   },
   "dependencies": {

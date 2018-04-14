@@ -27,7 +27,7 @@ $(function () {
         var maxLength = 100;
         var trimmed = content.substr(0, maxLength);
         trimmed = trimmed.substr(0, Math.min(trimmed.length, trimmed.lastIndexOf(" ")))
-        output += '<p class="teaser-content">' + trimmed + '...</p>';
+        output += '<p class="teaser-content">' + trimmed + '</p>';
         output += '</div></div>';
       });
       $content.html(output);
