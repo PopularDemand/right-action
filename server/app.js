@@ -5,29 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var { routes, apiRoutes } = require('./routes');
-
+var dotenv = require('dotenv');
 var app = express();
 
-// Hot reload in development
-// if (process.env.NODE_ENV === 'development') {
-//   var webpack = require('webpack');
-//   var webpackConfig = require('../webpack.config.js');
-//   var webpackDevMiddleware = require('webpack-dev-middleware');
-//   var webpackHotMiddleware = require('webpack-hot-middleware');
-//   var compiler = webpack(webpackConfig);
+// use dotenv
+dotenv.config({
+  silent: true,
+});
 
-//   app.use(webpackDevMiddleware(compiler, {
-//     noInfo: true
-//   }));
-//   app.use(webpackHotMiddleware(compiler));
-// }
-
-// view engine setup
-app.set('views', path.join(__dirname, '../src/views'));
-app.set('view engine', 'hbs');
-
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,8 +21,12 @@ app.use(cookieParser());
 app.use('/public', express.static(path.join(__dirname, '../public/')));
 app.use(express.static(path.join(__dirname, '../dist/')));
 
-app.use('/api', apiRoutes);
-app.use('/', routes);
+// app.use('/api', apiRoutes);
+// app.use('/', routes);
+
+app.get('/', function(req, res) {
+  res.sendfile('dist/index.html');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,13 +37,11 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send({ error: `error: ${err.message}` });
 });
+
+app.listen(3000);
 
 module.exports = app;
