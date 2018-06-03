@@ -1,38 +1,24 @@
 const path = require('path');
-const fs = require('fs');
 const webpack = require('webpack');
-const merge = require('lodash/merge');
-const get = require('lodash/get');
-const { initApp } = require('./server/app');
-
-const PAGES_DIR = path.resolve(__dirname, 'src/scripts/pages');
-const STYLES_DIR = path.resolve(__dirname, 'src/stylesheets/pages');
-
-const getFiles = (dir) => {
-  const files = fs.readdirSync(dir);
-  return files.reduce((pages, file) => {
-    const name = file.match(/(.*)\..*/)[1];
-    pages[name] = path.resolve(dir, file);
-    return pages;
-  }, {});
-}
-
-const getFilesWithWebpack = (dir) => {
-  const files = getFiles(dir);
-  files.webpack = 'webpack-hot-middleware';
-  return files;
-}
-
-const entry = process.env === 'production' ? getFiles(PAGES_DIR) : getFilesWithWebpack(PAGES_DIR);
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry,
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'index.js',
   },
   module: {
-    rules: [{
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['babel-preset-env']
+          }
+        }
+      }, {
       test: /\.s?css/,
       use: [{
           loader: "style-loader" // creates style nodes from JS strings
@@ -41,6 +27,9 @@ module.exports = {
       }, {
           loader: "sass-loader" // compiles Sass to CSS
       }]
+    },{
+      test: /\.html$/,
+      loader: 'html-loader'
     }, {
       test: /\.(png|woff|woff2|eot|ttf|svg|xml|ico|webmanifest)$/,
       loader: 'url-loader?limit=100000'
@@ -48,6 +37,10 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html'
+    })
   ]
 };
